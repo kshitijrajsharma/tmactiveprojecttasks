@@ -60,6 +60,7 @@ async def filter_tasks_by_date(project_id, from_date, to_date, progress_bar, sta
                                 'projectId': task_details['projectId'],
                                 'taskStatus': task_details['taskStatus'],
                                 'lastUpdated': task_details['lastUpdated'],
+                                'lastUpdatedBy': task_details['taskHistory'][0]['actionBy'] if task_details.get('taskHistory') and len(task_details['taskHistory']) > 0 else ''
                             }
                 return None
         
